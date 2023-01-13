@@ -21,32 +21,17 @@ var Shape = /** @class */ (function () {
     }
     return Shape;
 }());
-// Notice that the Shape class has two abstract methods, getArea and getPerimeter, that are not implemented.
-// These methods are meant to be implemented by the classes that inherit from the Shape class.
-// Here's an example of a class that inherits from the Shape class:
-var Rectangle = /** @class */ (function (_super) {
-    __extends(Rectangle, _super);
-    function Rectangle(width, height) {
+var Square = /** @class */ (function (_super) {
+    __extends(Square, _super);
+    function Square(sideLength) {
         var _this = _super.call(this) || this;
-        _this.width = width;
-        _this.height = height;
+        _this.sideLength = sideLength;
         return _this;
     }
-    Rectangle.prototype.getArea = function () {
-        return this.width * this.height;
+    Square.prototype.getArea = function () {
+        return Math.pow(this.sideLength, 2);
     };
-    Rectangle.prototype.getPerimeter = function () {
-        return 2 * (this.width + this.height);
-    };
-    return Rectangle;
+    return Square;
 }(Shape));
-// In this example, the Rectangle class extends the Shape class and implements the getArea and getPerimeter methods.
-//  The Rectangle class has its own constructor method, which takes in width and height parameters.
-// Now let's create an instance of the Rectangle class and use it to call the methods:
-var rectangle = new Rectangle(5, 10);
-console.log("Area of rectangle is ".concat(rectangle.getArea()));
-console.log("Perimeter of rectangle is ".concat(rectangle.getPerimeter()));
-// Area of rectangle is 50
-// Perimeter of rectangle is 30
-// Here, the Rectangle class is using the abstraction provided by the Shape class to hide the implementation details of calculating the area and perimeter of the rectangle, and instead, it provides a simple interface for getting the area and perimeter.
-// This is a basic example of abstraction in TypeScript. By creating an abstract class, you can define a common interface for a group of related objects and hide the implementation details from the user.
+var square = new Square(5);
+console.log(square.getArea());

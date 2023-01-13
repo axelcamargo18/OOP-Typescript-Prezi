@@ -26,27 +26,13 @@ class Rectangle implements Shape {
   }
 }
 
-class Circle implements Shape {
-  radius: number;
-  constructor(radius: number) {
-    this.radius = radius;
-  }
-  getArea() {
-    return Math.PI * this.radius ** 2;
-  }
-}
+// As you can see the class Rectangle is implementing Shape interface and has the same method getArea which has different implementation.
 
-// As you can see both the classes Rectangle and Circle are implementing Shape interface and have the same method getArea which has different implementation.
-
-// We can create instances of the Rectangle and Circle classes and use them to call the getArea method:
+// We can create instances of the Rectangle class and use it to call the getArea method:
 
 let rectangle = new Rectangle(5, 10);
 console.log(`Area of rectangle is ${rectangle.getArea()}`);
 
-let circle = new Circle(5);
-console.log(`Area of Circle is ${circle.getArea()}`);
-
 // With this, you should see following output:
 
 // Area of rectangle is 50
-// Area of Circle is 78.53981633974483

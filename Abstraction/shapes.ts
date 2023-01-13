@@ -5,46 +5,33 @@
 // In TypeScript, you can create an abstract class by using the abstract keyword. An abstract class cannot be instantiated and can only be used as a base class for other classes. Here's an example of an abstract class called Shape:
 
 abstract class Shape {
-  constructor() {}
   abstract getArea(): number;
-  abstract getPerimeter(): number;
 }
 
-// Notice that the Shape class has two abstract methods, getArea and getPerimeter, that are not implemented.
+class Square extends Shape {
+  sideLength: number;
 
-// These methods are meant to be implemented by the classes that inherit from the Shape class.
-
-// Here's an example of a class that inherits from the Shape class:
-
-class Rectangle extends Shape {
-  width: number;
-  height: number;
-  constructor(width: number, height: number) {
+  constructor(sideLength: number) {
     super();
-    this.width = width;
-    this.height = height;
+    this.sideLength = sideLength;
   }
-  getArea() {
-    return this.width * this.height;
-  }
-  getPerimeter() {
-    return 2 * (this.width + this.height);
+
+  getArea(): number {
+    return this.sideLength ** 2;
   }
 }
 
-// In this example, the Rectangle class extends the Shape class and implements the getArea and getPerimeter methods.
+const square = new Square(5);
+console.log(square.getArea());
 
-//  The Rectangle class has its own constructor method, which takes in width and height parameters.
+// This code defines an abstract class called Shape that has a single abstract method getArea().
 
-// Now let's create an instance of the Rectangle class and use it to call the methods:
+// An abstract class is a class that cannot be instantiated on its own, it serves as a base class for other classes that will provide concrete implementations of the abstract methods.
 
-let rectangle = new Rectangle(5, 10);
-console.log(`Area of rectangle is ${rectangle.getArea()}`);
-console.log(`Perimeter of rectangle is ${rectangle.getPerimeter()}`);
+// The Square class extends the Shape class and provides a concrete implementation of the getArea() method. The Square class has a single property sideLength which is set in the constructor.
 
-// Area of rectangle is 50
-// Perimeter of rectangle is 30
+// The getArea() method calculates and returns the area of the square by squaring the sideLength property.
 
-// Here, the Rectangle class is using the abstraction provided by the Shape class to hide the implementation details of calculating the area and perimeter of the rectangle, and instead, it provides a simple interface for getting the area and perimeter.
+// The code then creates an instance of the Square class called square with a side length of 5.
 
-// This is a basic example of abstraction in TypeScript. By creating an abstract class, you can define a common interface for a group of related objects and hide the implementation details from the user.
+// Finally, it calls the getArea() method on the square instance and logs the result to the console, which is 25 in this case.

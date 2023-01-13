@@ -1,4 +1,4 @@
-// Inheritance is a technique in OOP that allows you to create new classes that inherit the properties and methods of existing classes. 
+// Inheritance is a technique in OOP that allows you to create new classes that inherit the properties and methods of existing classes.
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -15,8 +15,8 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 // This allows you to reuse existing code and create a hierarchical relationship between classes.
-// In TypeScript, you can create a class that inherits from another class by using the extends keyword. 
-// Here's an example of a base class called Animal:
+// In TypeScript, you can create a class that inherits from another class by using the extends keyword.
+// Helps eliminate redundant code //
 var Animals = /** @class */ (function () {
     function Animals(name) {
         this.name = name;
